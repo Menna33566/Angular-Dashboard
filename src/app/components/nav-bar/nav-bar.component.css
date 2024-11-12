@@ -1,0 +1,17 @@
+.center:focus{
+  border-radius: 0.5rem; 
+  outline: none; 
+  transition: background-color 0.3s ease, color 0.3s ease, width;
+  background-color:#FF7F5C;
+  color: #ffffff; 
+  width: auto;
+}
+
+.p_center{
+    justify-content: center;
+    width: 472px;
+    height: 44px;
+    background: #F9F5F3 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    opacity: 1;
+}
