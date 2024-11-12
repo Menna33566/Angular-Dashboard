@@ -38,14 +38,14 @@
   <canvas id="myChart"></canvas>
 </div>
 
-<div *ngIf="activeTab === 'list'" class="p-4 rounded-lg " style="height: auto; width: 100%;">
+<div *ngIf="activeTab === 'list'" class="p-4 rounded-full " style="height: auto; width: 100%;">
   
   <!-- <div class="w-full h-[50vh] overflow-y-auto space-y-4 p-4 bg-gray-50 "> -->
-   <div class="w-full h-[45vh] overflow-y-auto space-y-4 p-4 scrollbar">
+   <div class="w-full h-[40vh] overflow-y-auto space-y-4 p-4 scrollbar">
   <!-- Card Container -->
   
 
-    <div *ngFor="let card of cards" class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
+    <div *ngFor="let card of cards" class="bg-white rounded-lg shadow-md p-2 flex h-70 justify-between items-center">
       <div class="flex items-start space-x-4">
         <div>
           <div class="text-orange-500 mb-2">

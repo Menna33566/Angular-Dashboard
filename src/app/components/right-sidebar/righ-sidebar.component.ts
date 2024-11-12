@@ -46,14 +46,14 @@ export class RighSidebarComponent  implements AfterViewInit {
       options: {
         elements: {
           line: {
-              tension: 0.4 // نفس الخاصية يمكن تطبيقها هنا أيضًا
+              tension: 0.4 
           }
       },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false // Disable the legend
+            display: false 
           }}}
     });
   }

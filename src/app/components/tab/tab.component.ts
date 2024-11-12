@@ -17,22 +17,20 @@ export class TabComponent implements OnInit {
   chart: Chart | undefined;
   
   constructor(private cdRef: ChangeDetectorRef) {
-    Chart.register(...registerables); // Register all Chart.js components
+    Chart.register(...registerables); 
   }
   
   setActiveTab(tab: string) {
     this.activeTab = tab;
   
-    // Only initialize the chart if the "Graph" tab is active
     if (this.activeTab === 'graph') {
-      // Use ChangeDetectorRef to ensure that the tab content is rendered
       this.cdRef.detectChanges();
       
       setTimeout(() => {
         this.initializeChart();  
       }, 0);
     } else if (this.chart) {
-      this.chart.destroy(); // Destroy chart when switching to another tab
+      this.chart.destroy(); 
       this.chart = undefined;
     }
   }
@@ -85,7 +83,6 @@ export class TabComponent implements OnInit {
 
 
   initializeChart() {
-    // Destroy previous chart instance if it exists
     if (this.chart) {
       this.chart.destroy();
     }
@@ -116,7 +113,7 @@ export class TabComponent implements OnInit {
         responsive: true,
         plugins: {
           legend: {
-            display: false // Disable the legend
+            display: false 
           }
         },
         scales: {
@@ -152,7 +149,7 @@ export class TabComponent implements OnInit {
   ngOnInit(): void {
     if (this.activeTab === 'graph') {
       setTimeout(() => {
-        this.initializeChart();  // Ensure chart is initialized after DOM rendering
+        this.initializeChart();  
       }, 0);
     }
   }
@@ -165,7 +162,7 @@ export class TabComponent implements OnInit {
   
   ngOnDestroy(): void {
     if (this.chart) {
-      this.chart.destroy(); // Destroy chart when component is destroyed
+      this.chart.destroy();
     }
   }
 }
