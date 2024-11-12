@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TabComponent } from "../tab/tab.component";
-import { RighSidebarComponent } from "../righ-sidebar/righ-sidebar.component";
+import { RighSidebarComponent } from "../right-sidebar/righ-sidebar.component";
 
 @Component({
   selector: 'app-home',

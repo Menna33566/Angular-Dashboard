@@ -37,6 +37,53 @@ export class TabComponent implements OnInit {
     }
   }
   
+  cards = [
+    {
+      stationName: 'STATION NAME 1',
+      dummy: 'DUMMY',
+      totalSales: '62,721 m³',
+      totalValue: '550 EGP',
+      totalTransactionCount: '5161',
+      compressionState: 'Compression',
+      maxTransactionPerHour: '20',
+      maxTransactionDateTime: '8-1-2021 | 10:16 PM',
+    },
+    {
+      stationName: 'STATION NAME 2',
+      dummy: 'DUMMY',
+      totalSales: '45,000 m³',
+      totalValue: '300 EGP',
+      totalTransactionCount: '4000',
+      compressionState: 'Compression',
+      maxTransactionPerHour: '15',
+      maxTransactionDateTime: '7-1-2021 | 09:00 PM',
+    },
+    {
+      stationName: 'STATION NAME 3',
+      dummy: 'DUMMY',
+      totalSales: '50,000 m³',
+      totalValue: '400 EGP',
+      totalTransactionCount: '4500',
+      compressionState: 'Compression',
+      maxTransactionPerHour: '18',
+      maxTransactionDateTime: '6-1-2021 | 11:30 PM',
+    },
+    {
+      stationName: 'STATION NAME 4',
+      dummy: 'DUMMY',
+      totalSales: '70,000 m³',
+      totalValue: '600 EGP',
+      totalTransactionCount: '6000',
+      compressionState: 'Compression',
+      maxTransactionPerHour: '25',
+      maxTransactionDateTime: '5-1-2021 | 08:45 PM',
+    }
+  ];
+
+
+
+
+
   initializeChart() {
     // Destroy previous chart instance if it exists
     if (this.chart) {
@@ -65,7 +112,7 @@ export class TabComponent implements OnInit {
         ]
       },
       options: {
-        aspectRatio: 3,
+        aspectRatio: 4,
         responsive: true,
         plugins: {
           legend: {
@@ -74,7 +121,7 @@ export class TabComponent implements OnInit {
         },
         scales: {
             y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 min: 100,
                 max: 300,
                 ticks: {
@@ -82,9 +129,13 @@ export class TabComponent implements OnInit {
                 }
             },
             x: {
+              grid: {
+                display: false 
+              },
+              beginAtZero: false,
                 ticks: {
                     font: {
-                        size: 6
+                        size: 8
                     }
                 }
             }

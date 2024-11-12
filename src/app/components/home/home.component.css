@@ -7,3 +7,7 @@ body {
     color: #3D5161;
 }
 
+.cards div {
+    border-radius: 25px;
+}
+

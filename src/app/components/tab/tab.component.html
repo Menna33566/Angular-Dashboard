@@ -1,33 +1,35 @@
-<div class="flex justify-end space-x-2  mb-4">
+<div class="flex justify-end space-x-4  mb-4" >
+<div class="flex justify-center w-64 rounded-full" style="background-color: #FFFFFF;">
   <button
-    (click)="setActiveTab('graph')"
-    [ngClass]="{
-      'bg-orange-500 text-white': activeTab === 'graph',
-      'bg-white text-gray-600': activeTab !== 'graph'
-    }"
-    class="flex items-center px-4 py-2 rounded-full font-semibold"
-  >
-  <svg class="w-6 pr-2 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v4m6-6v6m6-4v4m6-6v6M3 11l6-5 6 5 5.5-5.5"/>
-  </svg>
-  
-    Graph
-  </button>
+  (click)="setActiveTab('graph')"
+  [ngClass]="{
+    'bg-orange-500 text-white w-50': activeTab === 'graph',
+    'bg-white text-gray-600': activeTab !== 'graph'
+  }"
+  class="flex items-center px-4 py-2 rounded-full font-semibold"
+>
+<svg class="w-6 pr-2 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v4m6-6v6m6-4v4m6-6v6M3 11l6-5 6 5 5.5-5.5"/>
+</svg>
 
-  <button
-    (click)="setActiveTab('list')"
-    [ngClass]="{
-      'bg-orange-500 text-white': activeTab === 'list',
-      'bg-white text-gray-600': activeTab !== 'list'
-    }"
-    class="flex items-center px-4 py-2 rounded-full font-semibold"
-  >
-  <svg class="w-6 pr-1 h-6 text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
-  </svg>
-  
-    List
-  </button>
+  Graph
+</button>
+
+<button
+  (click)="setActiveTab('list')"
+  [ngClass]="{
+    'bg-orange-500 text-white w-50': activeTab === 'list',
+    'bg-white text-gray-600': activeTab !== 'list'
+  }"
+  class="flex items-center px-4 py-2 rounded-full font-semibold"
+>
+<svg class="w-6 pr-1 h-6 text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
+</svg>
+
+  List
+</button>
+</div>
 </div>
 
 <div *ngIf="activeTab === 'graph'" class="p-4 bg-white rounded-lg shadow-md" style="height: auto; width: 100%;">
@@ -36,200 +38,58 @@
   <canvas id="myChart"></canvas>
 </div>
 
-<div *ngIf="activeTab === 'list'" class="p-4 bg-white rounded-lg shadow-md" style="height: auto; width: 100%;">
+<div *ngIf="activeTab === 'list'" class="p-4 rounded-lg " style="height: auto; width: 100%;">
   
   <!-- <div class="w-full h-[50vh] overflow-y-auto space-y-4 p-4 bg-gray-50 "> -->
-   <div class="w-full h-[45vh] overflow-y-auto space-y-4 p-4 bg-gray-50 scrollbar">
+   <div class="w-full h-[45vh] overflow-y-auto space-y-4 p-4 scrollbar">
   <!-- Card Container -->
-  <div class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
-    <div class="flex items-start space-x-4">
-      <!-- Icon and Station Name -->
-      <div>
-        <div class="text-orange-500 mb-2">
-          <!-- Example icon, replace with the appropriate SVG/icon -->
-          <i class="fas fa-gas-pump text-3xl"></i>
-        </div>
-        <h3 class="text-lg font-bold">STATION NAME</h3>
-        <p class="text-sm text-gray-500">DUMMY</p>
-      </div>
-    </div>
-    <!-- Card Content -->
-    <div class="flex-1 grid grid-cols-2 gap-4 ml-4">
-      <div>
-        <p class="text-sm text-gray-500">Total Sales</p>
-        <p class="font-semibold">62,721 m³</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Value</p>
-        <p class="font-semibold">550 EGP</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Transaction Count</p>
-        <p class="font-semibold">5161</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Compression State</p>
-        <p class="font-semibold">Compression</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction / Hour</p>
-        <p class="font-semibold">20</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction Date-Time</p>
-        <p class="font-semibold">8-1-2021 | 10:16 PM</p>
-      </div>
-    </div>
-    
-    <!-- Menu Icon -->
-    <div>
-      <i class="fas fa-ellipsis-h text-gray-500"></i>
-    </div>
-    
-  </div>
-
-  <div class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
-    <div class="flex items-start space-x-4">
-      <!-- Icon and Station Name -->
-      <div>
-        <div class="text-orange-500 mb-2">
-          <!-- Example icon, replace with the appropriate SVG/icon -->
-          <i class="fas fa-gas-pump text-3xl"></i>
-        </div>
-        <h3 class="text-lg font-bold">STATION NAME</h3>
-        <p class="text-sm text-gray-500">DUMMY</p>
-      </div>
-    </div>
-    <!-- Card Content -->
-    <div class="flex-1 grid grid-cols-2 gap-4 ml-4">
-      <div>
-        <p class="text-sm text-gray-500">Total Sales</p>
-        <p class="font-semibold">62,721 m³</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Value</p>
-        <p class="font-semibold">550 EGP</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Transaction Count</p>
-        <p class="font-semibold">5161</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Compression State</p>
-        <p class="font-semibold">Compression</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction / Hour</p>
-        <p class="font-semibold">20</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction Date-Time</p>
-        <p class="font-semibold">8-1-2021 | 10:16 PM</p>
-      </div>
-    </div>
-    
-    <!-- Menu Icon -->
-    <div>
-      <i class="fas fa-ellipsis-h text-gray-500"></i>
-    </div>
-    
-  </div>
-  <div class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
-    <div class="flex items-start space-x-4">
-      <!-- Icon and Station Name -->
-      <div>
-        <div class="text-orange-500 mb-2">
-          <!-- Example icon, replace with the appropriate SVG/icon -->
-          <i class="fas fa-gas-pump text-3xl"></i>
-        </div>
-        <h3 class="text-lg font-bold">STATION NAME</h3>
-        <p class="text-sm text-gray-500">DUMMY</p>
-      </div>
-    </div>
-    <!-- Card Content -->
-    <div class="flex-1 grid grid-cols-2 gap-4 ml-4">
-      <div>
-        <p class="text-sm text-gray-500">Total Sales</p>
-        <p class="font-semibold">62,721 m³</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Value</p>
-        <p class="font-semibold">550 EGP</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Transaction Count</p>
-        <p class="font-semibold">5161</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Compression State</p>
-        <p class="font-semibold">Compression</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction / Hour</p>
-        <p class="font-semibold">20</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction Date-Time</p>
-        <p class="font-semibold">8-1-2021 | 10:16 PM</p>
-      </div>
-    </div>
-    
-    <!-- Menu Icon -->
-    <div>
-      <i class="fas fa-ellipsis-h text-gray-500"></i>
-    </div>
-    
-  </div>
-  <div class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
-    <div class="flex items-start space-x-4">
-      <!-- Icon and Station Name -->
-      <div>
-        <div class="text-orange-500 mb-2">
-          <!-- Example icon, replace with the appropriate SVG/icon -->
-          <i class="fas fa-gas-pump text-3xl"></i>
-        </div>
-        <h3 class="text-lg font-bold">STATION NAME</h3>
-        <p class="text-sm text-gray-500">DUMMY</p>
-      </div>
-    </div>
-    <!-- Card Content -->
-    <div class="flex-1 grid grid-cols-2 gap-4 ml-4">
-      <div>
-        <p class="text-sm text-gray-500">Total Sales</p>
-        <p class="font-semibold">62,721 m³</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Value</p>
-        <p class="font-semibold">550 EGP</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Total Transaction Count</p>
-        <p class="font-semibold">5161</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Compression State</p>
-        <p class="font-semibold">Compression</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction / Hour</p>
-        <p class="font-semibold">20</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">Max Transaction Date-Time</p>
-        <p class="font-semibold">8-1-2021 | 10:16 PM</p>
-      </div>
-    </div>
-    
-    <!-- Menu Icon -->
-    <div>
-      <i class="fas fa-ellipsis-h text-gray-500"></i>
-    </div>
-    
-  </div>
-
-  <!-- Duplicate the above card structure as needed -->
-</div>
-
-  <!-- </div> -->
   
+
+    <div *ngFor="let card of cards" class="bg-white rounded-lg shadow-md p-4 flex justify-between items-center">
+      <div class="flex items-start space-x-4">
+        <div>
+          <div class="text-orange-500 mb-2">
+            <!-- Example icon -->
+            <i class="fas fa-gas-pump text-3xl"></i>
+          </div>
+          <h3 class="text-lg font-bold">{{ card.stationName }}</h3>
+          <p class="text-sm text-gray-500">{{ card.dummy }}</p>
+        </div>
+      </div>
+      <div class="flex-1 grid grid-cols-2 gap-4 ml-4">
+        <div>
+          <p class="text-sm text-gray-500">Total Sales</p>
+          <p class="font-semibold">{{ card.totalSales }}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Total Value</p>
+          <p class="font-semibold">{{ card.totalValue }}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Total Transaction Count</p>
+          <p class="font-semibold">{{ card.totalTransactionCount }}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Compression State</p>
+          <p class="font-semibold">{{ card.compressionState }}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Max Transaction / Hour</p>
+          <p class="font-semibold">{{ card.maxTransactionPerHour }}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Max Transaction Date-Time</p>
+          <p class="font-semibold">{{ card.maxTransactionDateTime }}</p>
+        </div>
+      </div>
+      <div>
+        <i class="fas fa-ellipsis-h text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  
+ 
+
 </div>
+
+  
